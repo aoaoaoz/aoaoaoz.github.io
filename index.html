@@ -309,9 +309,11 @@
           
             <p>“title”: “2018ACM-ICPC青岛赛区网络赛K”,<br>“date”: “2018-09-18 00:49:49”<br>;;;</p>
 <p><strong>题目描述：</strong></p>
+<p>BaoBao has a sequence $a_1,a_2,\dots,a_n$. He would like to find a subset $S$ of $\{1, 2, \dots, n\}$ such that $\forall i, j \in S$,  $a_i \oplus a_j &lt; \min(a_i,a_j)$ and $|S|$ is maximum, where  means bitwise exclusive or.</p>
 <p><strong>题意：</strong>给n个数，从中选出最大的子集合，使得该集合中的数两两之间的异或值小于他们各自本身，输出最大的子集合大小。</p>
 <p><strong>思路：</strong>当两个数的最大二进制位不同时，两者的异或值肯定大于两者中的较小值，故按照二进制位最高位的位置来分组，输出最大那一组的大小即可。</p>
-<h2 id="抛个砖，-f-n-sum-ij-le-n-mu-2-i-mu-2-j-，分-O-n-1-2-段枚举-i-，需要计算一系列-g-lfloor-n-k-rfloor-的值，这里-g-n-sum-i-1-n-mu-2-i-sum-i-1-lfloor-sqrt-n-rfloor-mu-i-lfloor-n-i-2-rfloor-，分-O-n-1-3-段枚举-i-进行计算，需要-O-n-1-2-预处理-mu-的前缀和，总复杂度可以分析出是-O-n-2-3"><a href="#抛个砖，-f-n-sum-ij-le-n-mu-2-i-mu-2-j-，分-O-n-1-2-段枚举-i-，需要计算一系列-g-lfloor-n-k-rfloor-的值，这里-g-n-sum-i-1-n-mu-2-i-sum-i-1-lfloor-sqrt-n-rfloor-mu-i-lfloor-n-i-2-rfloor-，分-O-n-1-3-段枚举-i-进行计算，需要-O-n-1-2-预处理-mu-的前缀和，总复杂度可以分析出是-O-n-2-3" class="headerlink" title="抛个砖，$f(n) = \sum_{ij \le n} \mu^2(i) \mu^2(j)$，分 $O(n^{1/2})$ 段枚举 $i$，需要计算一系列 $g(\lfloor n/k \rfloor)$ 的值，这里 $g(n) = \sum_{i=1}^{n} \mu^2(i) = \sum_{i=1}^{\lfloor \sqrt{n} \rfloor} \mu(i) \lfloor n/i^2 \rfloor$，分 $O(n^{1/3})$ 段枚举 $i$ 进行计算，需要 $O(n^{1/2})$ 预处理 $\mu$ 的前缀和，总复杂度可以分析出是 $O(n^{2/3})$"></a>抛个砖，$f(n) = \sum_{ij \le n} \mu^2(i) \mu^2(j)$，分 $O(n^{1/2})$ 段枚举 $i$，需要计算一系列 $g(\lfloor n/k \rfloor)$ 的值，这里 $g(n) = \sum_{i=1}^{n} \mu^2(i) = \sum_{i=1}^{\lfloor \sqrt{n} \rfloor} \mu(i) \lfloor n/i^2 \rfloor$，分 $O(n^{1/3})$ 段枚举 $i$ 进行计算，需要 $O(n^{1/2})$ 预处理 $\mu$ 的前缀和，总复杂度可以分析出是 $O(n^{2/3})$</h2><p><strong>代码：</strong></p>
+<hr>
+<p><strong>代码：</strong></p>
 <pre><code>#include &lt;bits/stdc++.h&gt;
 using namespace std;
 const int maxn = 32;
