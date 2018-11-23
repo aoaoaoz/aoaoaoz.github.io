@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="2018ACM-ICPC青岛赛区网络赛," />
+  <meta name="keywords" content="Project_Euler," />
 
 
 
@@ -83,18 +83,18 @@
 
 
 
-<meta name="description" content="题目描述：BaoBao has a sequence $a_1,a_2,\dots,a_n$. He would like to find a subset $S$ of $\{1, 2, \dots, n\}$ such that $\forall i, j \in S$,  $a_i \oplus a_j &amp;lt; \min(a_i,a_j)$ and $|S|$ is maximum, wh">
-<meta name="keywords" content="2018ACM-ICPC青岛赛区网络赛">
+<meta name="description" content="代码：1234567891011121314151617181920212223242526272829// P20#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;    set&amp;lt;int&amp;gt; res;    for(int i=1;i&amp;lt;=10000;++i)    &amp;#123;        int">
+<meta name="keywords" content="Project_Euler">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2018ACM-ICPC青岛赛区网络赛K">
-<meta property="og:url" content="http://yoursite.com/2018/09/19/2018ACM-ICPC青岛赛区网络赛K/index.html">
+<meta property="og:title" content="Project Euler">
+<meta property="og:url" content="http://yoursite.com/2018/11/24/Project-Euler/index.html">
 <meta property="og:site_name" content="嗷嗷嗷&#39;s Blog">
-<meta property="og:description" content="题目描述：BaoBao has a sequence $a_1,a_2,\dots,a_n$. He would like to find a subset $S$ of $\{1, 2, \dots, n\}$ such that $\forall i, j \in S$,  $a_i \oplus a_j &amp;lt; \min(a_i,a_j)$ and $|S|$ is maximum, wh">
+<meta property="og:description" content="代码：1234567891011121314151617181920212223242526272829// P20#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;    set&amp;lt;int&amp;gt; res;    for(int i=1;i&amp;lt;=10000;++i)    &amp;#123;        int">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-19T09:37:57.242Z">
+<meta property="og:updated_time" content="2018-11-23T18:58:24.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="2018ACM-ICPC青岛赛区网络赛K">
-<meta name="twitter:description" content="题目描述：BaoBao has a sequence $a_1,a_2,\dots,a_n$. He would like to find a subset $S$ of $\{1, 2, \dots, n\}$ such that $\forall i, j \in S$,  $a_i \oplus a_j &amp;lt; \min(a_i,a_j)$ and $|S|$ is maximum, wh">
+<meta name="twitter:title" content="Project Euler">
+<meta name="twitter:description" content="代码：1234567891011121314151617181920212223242526272829// P20#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;int main()&amp;#123;    set&amp;lt;int&amp;gt; res;    for(int i=1;i&amp;lt;=10000;++i)    &amp;#123;        int">
 
 
 
@@ -124,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/09/19/2018ACM-ICPC青岛赛区网络赛K/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/24/Project-Euler/"/>
 
 
 
 
 
-  <title>2018ACM-ICPC青岛赛区网络赛K | 嗷嗷嗷's Blog</title>
+  <title>Project Euler | 嗷嗷嗷's Blog</title>
   
 
 
@@ -237,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/19/2018ACM-ICPC青岛赛区网络赛K/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/24/Project-Euler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嗷嗷嗷">
@@ -254,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">2018ACM-ICPC青岛赛区网络赛K</h1>
+          <h1 class="post-title" itemprop="name headline">Project Euler</h1>
         
 
         <div class="post-meta">
@@ -266,8 +266,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-19T17:34:03+08:00">
-                2018-09-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-24T02:20:17+08:00">
+                2018-11-24
               </time>
             
 
@@ -304,12 +304,7 @@
       
 
       
-        <h2 id="题目描述："><a href="#题目描述：" class="headerlink" title="题目描述："></a><strong>题目描述：</strong></h2><p>BaoBao has a sequence $a_1,a_2,\dots,a_n$. He would like to find a subset $S$ of $\{1, 2, \dots, n\}$ such that $\forall i, j \in S$,  $a_i \oplus a_j &lt; \min(a_i,a_j)$ and $|S|$ is maximum, where  means bitwise exclusive or.</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>There are multiple test cases. The first line of input contains an integer $T$ , indicating the number of test cases. For each test case:<br>The first line contains an integer $n$ ($1\le n \le 10^5$), indicating the length of the sequence.<br>The second line contains n integers: $a_1, a_2, \dots, a_n$ ($1 \le a_i \le 10^9$), indicating the sequence.<br>It is guaranteed that the sum of $n$ in all cases does not exceed $10^5$.</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>For each test case, output an integer denoting the maximum size of $S$ .</p>
-<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a><strong>题意</strong></h2><p>给n个数，从中选出最大的子集合，使得该集合中的数两两之间的异或值小于他们各自本身，输出最大的子集合大小。</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>当两个数的最大二进制位不同时，两者的异或值肯定大于两者中的较小值，故按照二进制位最高位的位置来分组，输出最大那一组的大小即可。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">32</span>;</span><br><span class="line"><span class="keyword">int</span> ans[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T; <span class="built_in">cin</span> &gt;&gt; T;</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> n, x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="built_in">memset</span>(ans, <span class="number">0</span>, <span class="keyword">sizeof</span>(ans));</span><br><span class="line">        <span class="keyword">while</span>(n--) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;x); <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span>(x) &#123;</span><br><span class="line">                x&gt;&gt;=<span class="number">1</span>; ++t;</span><br><span class="line">            &#125;</span><br><span class="line">            ++ans[t];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, *max_element(ans, ans+maxn));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// P20</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">10000</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j*j&lt;=i;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i%j==<span class="number">0</span>)</span><br><span class="line">                tmp += j + i/j;</span><br><span class="line">            <span class="keyword">if</span>(j*j==i) tmp -= j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;j*j&lt;=tmp;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(tmp%j==<span class="number">0</span>)</span><br><span class="line">                t += j + tmp/j;</span><br><span class="line">            <span class="keyword">if</span>(j*j==tmp) t -= j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(t==i&amp;&amp;i!=tmp)res.insert(t), res.insert(i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> x:res)ans += x;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -326,7 +321,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/2018ACM-ICPC青岛赛区网络赛/" rel="tag"># 2018ACM-ICPC青岛赛区网络赛</a>
+            <a href="/tags/Project-Euler/" rel="tag"># Project_Euler</a>
           
         </div>
       
@@ -339,15 +334,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/11/24/poj1837/" rel="next" title="poj1837">
+                <i class="fa fa-chevron-left"></i> poj1837
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/20/2018ACM-ICPC青岛赛区网络赛A/" rel="prev" title="2018ACM-ICPC青岛赛区网络赛A">
-                2018ACM-ICPC青岛赛区网络赛A <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -470,7 +465,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目描述："><span class="nav-number">1.</span> <span class="nav-text">题目描述：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">4.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">5.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">6.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">1.</span> <span class="nav-text">代码：</span></a></li></ol></div>
             
 
           </div>

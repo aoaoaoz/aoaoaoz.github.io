@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="嗷嗷嗷&#39;s Blog">
 <meta property="og:description" content="题意描述Gigel has a strange “balance” and he wants to poise it. Actually, the device is different from any other ordinary balance.It orders two arms of negligible weight and each arm’s length is 15. Some">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-23T17:28:27.547Z">
+<meta property="og:updated_time" content="2018-11-23T17:39:21.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="poj1837">
 <meta name="twitter:description" content="题意描述Gigel has a strange “balance” and he wants to poise it. Actually, the device is different from any other ordinary balance.It orders two arms of negligible weight and each arm’s length is 15. Some">
@@ -311,7 +311,7 @@
 <h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h2><p>2 4<br>-2 3<br>3 4 5 8</p>
 <h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h2><p>2</p>
 <h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><p>天平上有n个不同位置的挂钩，有m种不同质量的钩码，求有多少种让天平平衡的方法。钩码需要全部用上。</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>设$dp[i][j]$表示前i个钩码，使目前天平的力矩为j的方案有多少种，其中j==0时表示天平平衡。则对于当前第i个钩码如果状态j可以由j-w[i]<em>c[k]得到，那么加上它的方案数.即$$ dp[i][j]=\Sigma_{k=0}^n dp[i][j-w[i]</em>p[k]] $$当然此时j作为下标不能是负数，因此往正方向移动（20<em>15</em>25=7500位）。注意处理一下$j-w[i]<em>p[k]$超过范围时不考虑。当然也可以换成扫$j-w[i]</em>p[k]$，这样还可以剪枝。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>设$dp[i][j]$表示前i个钩码，使目前天平的力矩为j的方案有多少种，其中j==0时表示天平平衡。则对于当前第i个钩码如果状态j可以由j-w[i]<em>c[k]得到，那么加上它的方案数.即$$dp[i][j]=\Sigma_{k=0}^ndp[i][j-w[i]</em>p[k]]$$当然此时j作为下标不能是负数，因此往正方向移动（20<em>15</em>25=7500位）。注意处理一下$j-w[i]<em>p[k]$超过范围时不考虑。当然也可以换成扫$j-w[i]</em>p[k]$，这样还可以剪枝。</p>
 <h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">2</span>][<span class="number">15002</span>], p[<span class="number">50</span>], w[<span class="number">70</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m, t = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i) <span class="built_in">cin</span> &gt;&gt; p[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;++i) <span class="built_in">cin</span> &gt;&gt; w[i];</span><br><span class="line">    dp[t][<span class="number">7500</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        t^=<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">memset</span>(dp[t], <span class="number">0</span>, <span class="keyword">sizeof</span> dp[t]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=<span class="number">15000</span>;++j)</span><br><span class="line">            <span class="keyword">if</span>(dp[<span class="number">1</span>^t][j])</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;n;++k)</span><br><span class="line">                    dp[t][j+w[i]*p[k]] += dp[t^<span class="number">1</span>][j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[t][<span class="number">7500</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
@@ -351,6 +351,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/24/Project-Euler/" rel="prev" title="Project Euler">
+                Project Euler <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -427,7 +431,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -440,7 +444,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
