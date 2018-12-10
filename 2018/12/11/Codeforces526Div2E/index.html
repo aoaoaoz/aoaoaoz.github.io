@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="树上DP," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="题意描述先说结论，以后有空再补，最大权闭合子图的权值等于所有正权点之和减去最小割 InputOutputSample InputSample Output题意：思路：代码：1">
+<meta name="description" content="题意描述Recently, the Fair Nut has written k strings of length n, consisting of letters “a” and “b”. He calculated c — the number of strings that are prefixes of at least one of the written strings. Every">
+<meta name="keywords" content="树上DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="zuidadaiquanebihezitu">
-<meta property="og:url" content="http://yoursite.com/2018/11/01/zuidadaiquanebihezitu/index.html">
+<meta property="og:title" content="Codeforces526Div2E">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/Codeforces526Div2E/index.html">
 <meta property="og:site_name" content="嗷嗷嗷&#39;s Blog">
-<meta property="og:description" content="题意描述先说结论，以后有空再补，最大权闭合子图的权值等于所有正权点之和减去最小割 InputOutputSample InputSample Output题意：思路：代码：1">
+<meta property="og:description" content="题意描述Recently, the Fair Nut has written k strings of length n, consisting of letters “a” and “b”. He calculated c — the number of strings that are prefixes of at least one of the written strings. Every">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-01T15:28:50.887Z">
+<meta property="og:updated_time" content="2018-12-10T20:01:47.087Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="zuidadaiquanebihezitu">
-<meta name="twitter:description" content="题意描述先说结论，以后有空再补，最大权闭合子图的权值等于所有正权点之和减去最小割 InputOutputSample InputSample Output题意：思路：代码：1">
+<meta name="twitter:title" content="Codeforces526Div2E">
+<meta name="twitter:description" content="题意描述Recently, the Fair Nut has written k strings of length n, consisting of letters “a” and “b”. He calculated c — the number of strings that are prefixes of at least one of the written strings. Every">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/01/zuidadaiquanebihezitu/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/11/Codeforces526Div2E/"/>
 
 
 
 
 
-  <title>zuidadaiquanebihezitu | 嗷嗷嗷's Blog</title>
+  <title>Codeforces526Div2E | 嗷嗷嗷's Blog</title>
   
 
 
@@ -236,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/01/zuidadaiquanebihezitu/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/Codeforces526Div2E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嗷嗷嗷">
@@ -253,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">zuidadaiquanebihezitu</h1>
+          <h1 class="post-title" itemprop="name headline">Codeforces526Div2E</h1>
         
 
         <div class="post-meta">
@@ -265,8 +266,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-01T23:28:00+08:00">
-                2018-11-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T03:37:32+08:00">
+                2018-12-11
               </time>
             
 
@@ -303,8 +304,25 @@
       
 
       
-        <h2 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a><strong>题意描述</strong></h2><p>先说结论，以后有空再补，最大权闭合子图的权值等于所有正权点之和减去最小割</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h2><h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h2><h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+        <h2 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a><strong>题意描述</strong></h2><p>Recently, the Fair Nut has written k strings of length n, consisting of letters “a” and “b”. He calculated c — the number of strings that are prefixes of at least one of the written strings. Every string was counted only one time.</p>
+<p>Then, he lost his sheet with strings. He remembers that all written strings were lexicographically not smaller than string s and not bigger than string t. He is interested: what is the maximum value of c that he could get.</p>
+<p>A string a is lexicographically smaller than a string b if and only if one of the following holds:</p>
+<ul>
+<li>a is a prefix of b, but a≠b;</li>
+<li>in the first position where a and b differ, the string a has a letter that appears earlier in the alphabet than the corresponding letter in b.<br><strong>Input</strong></li>
+</ul>
+<hr>
+<p>The first line contains two integers n and k (1≤n≤5⋅105, 1≤k≤$10^9$).<br>The second line contains a string s (|s|=n) — the string consisting of letters “a” and “b.<br>The third line contains a string t (|t|=n) — the string consisting of letters “a” and “b.<br>It is guaranteed that string s is lexicographically not bigger than t.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>Print one number — maximal value of c.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h2><p>2 4<br>aa<br>bb</p>
+<p>3 3<br>aba<br>bba</p>
+<p>4 5<br>abbb<br>baaa</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h2><p>6</p>
+<p>8</p>
+<p>8</p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><p>给两个只由字符ab构成的长度为n的字符串s、t，保证s的字典序一定小于t，求字典序小于t且大于s的所有长度为n的字符串中选出k个，使得从中得到的本质不同的前缀的数量最大，输出这个最大值。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>比赛的时候想了一下没有k这个限制的做法，然后没有往深的地方想，结束之后发现原来做法是差不太多的。<br>考虑一个完全二叉字典树，其中每个节点最多只有两个儿子，也就是‘a’和’b’，将s和t插进去，显然答案就是从这个字典树中s的叶子结点和t的叶子节点之间选出k个叶子节点，使得这k条路经上的总结点数最大。<br>但是由于我们只需要统计数量，因此不需要真的把这棵树建起来，我们通过观察这颗字典树可以发现，假设s[i-1]和t[i-1]在树上的距离为d（也就是他们之间的同级节点的个数加1），则分类讨论，当s[i]=t[i]时，他们相对于s[i-1]和t[i-1]的方向都相同，因此的距离为2<em>d-1，如果s[i]&gt;t[i]，那么距离为2</em>d,否则距离为2*d-2。<br>口胡式证明正确性：当两个节点之间的距离小于k的时候，显然每条路径都经过是最优的，当两个节点之间的距离大于k的时候，直接加上k就可以了。首先这样的做法肯定是达到了上界，没有其他做法能比这样的策略获得的贡献更大，其次，如果这层节点的上一层节点距离已经可以走k条路经，显然这一层也可以走k条路经，如果上一层的距离小于k，那么这一层的每个节点肯定都是可达的，可行性得证。所以这个做法是没毛病的。实现起来比较简单。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll n, k;</span><br><span class="line">    <span class="built_in">string</span> s, t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; s &gt;&gt; t;</span><br><span class="line">    ll ans = <span class="number">0</span>, tmp = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)</span><br><span class="line">        <span class="keyword">if</span>(tmp&lt;k)</span><br><span class="line">        &#123;</span><br><span class="line">            tmp &lt;&lt;= <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(s[i]==t[i]) --tmp;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">'b'</span>&amp;&amp;t[i]==<span class="string">'a'</span>)tmp-=<span class="number">2</span>;</span><br><span class="line">            tmp = min(tmp, k);</span><br><span class="line">        &#125;</span><br><span class="line">        ans += tmp;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt;ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -319,6 +337,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/树上DP/" rel="tag"># 树上DP</a>
+          
+        </div>
+      
 
       
       
@@ -328,8 +352,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/15/temp/" rel="next" title="各种板子">
-                <i class="fa fa-chevron-left"></i> 各种板子
+              <a href="/2018/11/24/Project-Euler/" rel="next" title="Project Euler">
+                <i class="fa fa-chevron-left"></i> Project Euler
               </a>
             
           </div>
@@ -337,10 +361,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/08/BZOJ1001狼抓兔子/" rel="prev" title="BZOJ1001狼抓兔子">
-                BZOJ1001狼抓兔子 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -463,7 +483,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意描述"><span class="nav-number">1.</span> <span class="nav-text">题意描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意："><span class="nav-number">6.</span> <span class="nav-text">题意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">7.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">8.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意描述"><span class="nav-number">1.</span> <span class="nav-text">题意描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意："><span class="nav-number">5.</span> <span class="nav-text">题意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">6.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">7.</span> <span class="nav-text">代码：</span></a></li></ol></div>
             
 
           </div>
