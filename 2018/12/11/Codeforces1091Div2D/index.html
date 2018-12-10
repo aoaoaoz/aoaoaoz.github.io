@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="树上DP," />
 
 
 
@@ -83,17 +83,18 @@
 
 
 
-<meta name="description" content="题意描述轮状病毒有很多变种，所有轮状病毒的变种都是从一个轮状基产生的。一个N轮状基由圆环上N个不同的基原子和圆心处一个核原子构成的，2个原子之间的边表示这2个原子之间的信息通道。N轮状病毒的产生规律是在一个N轮状基中删去若干条边，使得各原子之间有唯一的信息通道，例如共有16个不同的3轮状病毒。现给定n(N&amp;lt;=100)，编程计算有多少个不同的n轮状病毒 Input第一行有1个正整数n Outp">
+<meta name="description" content="题意描述outputstandard outputThe Fair Nut is going to travel to the Tree Country, in which there are n cities. Most of the land of this country is covered by forest. Furthermore, the local road system for">
+<meta name="keywords" content="树上DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ1002轮状病毒">
-<meta property="og:url" content="http://yoursite.com/2018/11/08/BZOJ1002轮状病毒/index.html">
+<meta property="og:title" content="Codeforces1091Div2D-The Fair Nut and the Best Path">
+<meta property="og:url" content="http://yoursite.com/2018/12/11/Codeforces1091Div2D/index.html">
 <meta property="og:site_name" content="嗷嗷嗷&#39;s Blog">
-<meta property="og:description" content="题意描述轮状病毒有很多变种，所有轮状病毒的变种都是从一个轮状基产生的。一个N轮状基由圆环上N个不同的基原子和圆心处一个核原子构成的，2个原子之间的边表示这2个原子之间的信息通道。N轮状病毒的产生规律是在一个N轮状基中删去若干条边，使得各原子之间有唯一的信息通道，例如共有16个不同的3轮状病毒。现给定n(N&amp;lt;=100)，编程计算有多少个不同的n轮状病毒 Input第一行有1个正整数n Outp">
+<meta property="og:description" content="题意描述outputstandard outputThe Fair Nut is going to travel to the Tree Country, in which there are n cities. Most of the land of this country is covered by forest. Furthermore, the local road system for">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-08T15:33:50.879Z">
+<meta property="og:updated_time" content="2018-12-10T20:30:36.822Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ1002轮状病毒">
-<meta name="twitter:description" content="题意描述轮状病毒有很多变种，所有轮状病毒的变种都是从一个轮状基产生的。一个N轮状基由圆环上N个不同的基原子和圆心处一个核原子构成的，2个原子之间的边表示这2个原子之间的信息通道。N轮状病毒的产生规律是在一个N轮状基中删去若干条边，使得各原子之间有唯一的信息通道，例如共有16个不同的3轮状病毒。现给定n(N&amp;lt;=100)，编程计算有多少个不同的n轮状病毒 Input第一行有1个正整数n Outp">
+<meta name="twitter:title" content="Codeforces1091Div2D-The Fair Nut and the Best Path">
+<meta name="twitter:description" content="题意描述outputstandard outputThe Fair Nut is going to travel to the Tree Country, in which there are n cities. Most of the land of this country is covered by forest. Furthermore, the local road system for">
 
 
 
@@ -123,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/08/BZOJ1002轮状病毒/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/12/11/Codeforces1091Div2D/"/>
 
 
 
 
 
-  <title>BZOJ1002轮状病毒 | 嗷嗷嗷's Blog</title>
+  <title>Codeforces1091Div2D-The Fair Nut and the Best Path | 嗷嗷嗷's Blog</title>
   
 
 
@@ -236,7 +237,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/08/BZOJ1002轮状病毒/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/11/Codeforces1091Div2D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="嗷嗷嗷">
@@ -253,7 +254,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">BZOJ1002轮状病毒</h1>
+          <h1 class="post-title" itemprop="name headline">Codeforces1091Div2D-The Fair Nut and the Best Path</h1>
         
 
         <div class="post-meta">
@@ -265,8 +266,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-08T23:30:04+08:00">
-                2018-11-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-11T04:11:10+08:00">
+                2018-12-11
               </time>
             
 
@@ -303,14 +304,19 @@
       
 
       
-        <h2 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a><strong>题意描述</strong></h2><p>轮状病毒有很多变种，所有轮状病毒的变种都是从一个轮状基产生的。一个N轮状基由圆环上N个不同的基原子<br>和圆心处一个核原子构成的，2个原子之间的边表示这2个原子之间的信息通道。N轮状病毒的产生规律是在一个N轮状基中删去若干条边，使得各原子之间有唯一的信息通道，例如共有16个不同的3轮状病毒。现给定n(N&lt;=100)，编程计算有多少个不同的n轮状病毒</p>
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>第一行有1个正整数n</p>
-<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>计算出的不同的n轮状病毒数输出</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h2><p>3</p>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h2><p>16</p>
-<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><p>给一个车轮状的无向图，生成树计数。</p>
-<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>利用基尔霍夫矩阵树定理，打表获得n为3到9时的答案，扔进BM板子里获得递推式，用java的BigInteger根据递推式写出答案。</p>
-<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner cin=<span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n=cin.nextInt();</span><br><span class="line">        BigInteger[] arr = <span class="keyword">new</span> BigInteger[<span class="number">101</span>];</span><br><span class="line">        arr[<span class="number">0</span>] = <span class="keyword">new</span> BigInteger(<span class="string">"1"</span>);</span><br><span class="line">        arr[<span class="number">1</span>] = <span class="keyword">new</span> BigInteger(<span class="string">"1"</span>);</span><br><span class="line">        arr[<span class="number">2</span>] = <span class="keyword">new</span> BigInteger(<span class="string">"5"</span>);</span><br><span class="line">        arr[<span class="number">3</span>] = <span class="keyword">new</span> BigInteger(<span class="string">"16"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">4</span>;i&lt;=n;++i)</span><br><span class="line">            arr[i] = arr[i-<span class="number">1</span>].subtract(arr[i-<span class="number">2</span>]).multiply(<span class="keyword">new</span> BigInteger(<span class="string">"4"</span>)).add(arr[i-<span class="number">3</span>]);</span><br><span class="line">        System.out.println(arr[n]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a><strong>题意描述</strong></h2><p>outputstandard output<br>The Fair Nut is going to travel to the Tree Country, in which there are n cities. Most of the land of this country is covered by forest. Furthermore, the local road system forms a tree (connected graph without cycles). Nut wants to rent a car in the city u and go by a simple path to city v. He hasn’t determined his way, so it’s time to do it.</p>
+<p>A filling station is located in every city. Because of strange law, Nut can buy only wi liters of gasoline in the i-th city. We can assume, that he has infinite money. Each road has a length, and as soon as Nut drives through this road, the amount of gasoline decreases by length. Of course, Nut can’t choose a path, which consists of roads, where he runs out of gasoline. He can buy gasoline in every visited city, even in the first and the last.</p>
+<p>A path can consist of only one vertex.</p>
+<p>He also wants to find the maximum amount of gasoline that he can have at the end of the path. Help him: count it.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line contains a single integer n (1≤n≤3⋅105) — the number of cities.<br>The second line contains n integers w1,w2,…,wn (0≤wi≤109) — the maximum amounts of liters of gasoline that Nut can buy in cities.<br>Each of the next n−1 lines describes road and contains three integers u, v, c (1≤u,v≤n, 1≤c≤109, u≠v), where u and v — cities that are connected by this road and c — its length.<br>It is guaranteed that graph of road connectivity is a tree.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>Print one number — the maximum amount of gasoline that he can have at the end of the path.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h2><p>3<br>1 3 3<br>1 2 2<br>1 3 2</p>
+<p>5<br>6 3 2 5 0<br>1 2 10<br>2 3 3<br>2 4 1<br>1 5 1</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h2><p>3</p>
+<p>7</p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><p>给一棵n个节点的树， 每个节点上都有一个权值$w_i$，每条边上有一个花费$c_i$，任意选择起点u和终点v(u和v可以是同一个节点)，定义价值$x(u, v)$为从起点u到终点v的路径上所有的节点的权值之和减去所有的边的花费最大，输出这个最大值，其中，到达任任何一个节点的前一瞬间，x不能是负数。输出最大的x。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>树上dp。以节点1为起点dfs，$dp[u]=w[u]+max(0, max(dp[v]-c[u, v]))$,其中dp[i]表示，额，好像没有特别明确的含义，大概是表示经过i节点的最大收益吧，显然不一定非要从叶子节点一直push到根节点，也可以中间节点的某两条子树路径是答案，因此需要拿到(dp[v]-c[u, v])中的最大的两个值，这里可以O(n)做，但是由于排序O(nlogn)是没有卡的，所以直接排序也是可以的，但是我在比赛中用了很蠢的O(n^2)，不知道自己是怎么想的，然后愉快的fst了，掉分哭唧唧。然后就xjb更新答案就行了。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">const</span> ll mod = <span class="number">1000000007</span>;</span><br><span class="line"><span class="keyword">const</span> ll maxn = <span class="number">5e5</span>+<span class="number">7</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="built_in">vector</span>&lt;pair&lt;ll, ll&gt; &gt; G[maxn];</span><br><span class="line"><span class="keyword">int</span> vis[maxn];</span><br><span class="line">ll ans = <span class="number">-1</span>;</span><br><span class="line"><span class="function">ll <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> f, <span class="keyword">int</span> u, ll c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll res = a[u];</span><br><span class="line">    <span class="built_in">vector</span>&lt;ll&gt; tmp;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;G[u].size();++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(G[u][i].first==f)<span class="keyword">continue</span>;</span><br><span class="line">        ll t = dfs(u, G[u][i].first, G[u][i].second);</span><br><span class="line">        res = max(res, t+a[u]);</span><br><span class="line">        tmp.push_back(t);</span><br><span class="line">    &#125;</span><br><span class="line">    sort(tmp.begin(), tmp.end(), greater&lt;ll&gt;());</span><br><span class="line">    tmp.push_back(<span class="number">0</span>);</span><br><span class="line">    tmp.push_back(<span class="number">0</span>);</span><br><span class="line">    ans = max(a[u]+tmp[<span class="number">0</span>]+tmp[<span class="number">1</span>], ans);</span><br><span class="line">    ans = max(ans, res);</span><br><span class="line">    <span class="keyword">return</span> res-c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i) <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n<span class="number">-1</span>;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ll u, v, c;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; c;</span><br><span class="line">        G[u].push_back(make_pair(v, c));</span><br><span class="line">        G[v].push_back(make_pair(u, c));</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -325,6 +331,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/树上DP/" rel="tag"># 树上DP</a>
+          
+        </div>
+      
 
       
       
@@ -334,8 +346,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/08/BZOJ1001狼抓兔子/" rel="next" title="BZOJ1001狼抓兔子">
-                <i class="fa fa-chevron-left"></i> BZOJ1001狼抓兔子
+              <a href="/2018/12/11/Codeforces526Div2E/" rel="next" title="Codeforces1091Div2E-The Fair Nut and Strings">
+                <i class="fa fa-chevron-left"></i> Codeforces1091Div2E-The Fair Nut and Strings
               </a>
             
           </div>
@@ -343,10 +355,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/09/POJ1840Eqs/" rel="prev" title="POJ1840Eqs">
-                POJ1840Eqs <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
