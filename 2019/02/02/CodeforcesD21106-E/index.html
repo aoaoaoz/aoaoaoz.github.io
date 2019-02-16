@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="DP," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="嗷嗷嗷's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="题意描述Lunar New Year is approaching, and Bob is going to receive some red envelopes with countless money! But collecting money from red envelopes is a time-consuming process itself.Let’s describe this p">
+<meta name="keywords" content="DP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CodeforcesD21106-E Lunar New Year and Red Envelopes">
+<meta property="og:url" content="http://aoudad.cn/2019/02/02/CodeforcesD21106-E/index.html">
+<meta property="og:site_name" content="嗷嗷嗷&#39;s Blog">
+<meta property="og:description" content="题意描述Lunar New Year is approaching, and Bob is going to receive some red envelopes with countless money! But collecting money from red envelopes is a time-consuming process itself.Let’s describe this p">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-11T14:17:59.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CodeforcesD21106-E Lunar New Year and Red Envelopes">
+<meta name="twitter:description" content="题意描述Lunar New Year is approaching, and Bob is going to receive some red envelopes with countless money! But collecting money from red envelopes is a time-consuming process itself.Let’s describe this p">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aoudad.cn/2019/02/02/CodeforcesD21106-E/"/>
+
+
+
+
+
+  <title>CodeforcesD21106-E Lunar New Year and Red Envelopes | 嗷嗷嗷's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">嗷嗷嗷's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">aoaoao's Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aoudad.cn/2019/02/02/CodeforcesD21106-E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="嗷嗷嗷">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="嗷嗷嗷's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">CodeforcesD21106-E Lunar New Year and Red Envelopes</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-02T14:34:22+08:00">
+                2019-02-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="题意描述"><a href="#题意描述" class="headerlink" title="题意描述"></a><strong>题意描述</strong></h2><p>Lunar New Year is approaching, and Bob is going to receive some red envelopes with countless money! But collecting money from red envelopes is a time-consuming process itself.<br>Let’s describe this problem in a mathematical way. Consider a timeline from time $1$ to $n$. The $i$-th red envelope will be available from time $s_i$ to $t_i$, inclusive, and contain $w_i$ coins. If Bob chooses to collect the coins in the $i$-th red envelope, he can do it only in an integer point of time between $s_i$ and $t_i$, inclusive, and he can’t collect any more envelopes until time $d_i$ (inclusive) after that. Here $s_i \leq t_i \leq d_i$ holds.<br>Bob is a greedy man, he collects coins greedily — whenever he can collect coins at some integer time $x$, he collects the available red envelope with the maximum number of coins. If there are multiple envelopes with the same maximum number of coins, Bob would choose the one whose parameter $d$ is the largest. If there are still multiple choices, Bob will choose one from them randomly.<br>However, Alice — his daughter — doesn’t want her father to get too many coins. She could disturb Bob at no more than $m$ integer time moments. If Alice decides to disturb Bob at time $x$, he could not do anything at time $x$ and resumes his usual strategy at the time $x + 1$ (inclusive), which may lead to missing some red envelopes.<br>Calculate the minimum number of coins Bob would get if Alice disturbs him optimally.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a><strong>Input</strong></h2><p>The first line contains three non-negative integers n, m and k $(1≤n≤10^5, 0≤m≤200, 1≤k≤10^5)$, denoting the length of the timeline, the number of times Alice can disturb Bob and the total number of red envelopes, respectively.</p>
+<p>The following $k$ lines describe those $k$ red envelopes. The i-th line contains four positive integers si, ti, di and wi ($1 \leq s_i \leq t_i≤d_i \leq n$,  $1 \leq wi \leq 10^9$ ) — the time segment when the i-th envelope is available, the time moment Bob can continue collecting after collecting the i-th envelope, and the number of coins in this envelope, respectively.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a><strong>Output</strong></h2><p>Output one integer — the minimum number of coins Bob would get if Alice disturbs him optimally.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a><strong>Sample Input</strong></h2><p>12 2 6<br>1 5 5 4<br>4 6 6 2<br>3 8 8 3<br>2 9 9 5<br>6 10 10 7<br>8 12 12 9</p>
+<p>10 1 6<br>1 1 2 4<br>2 2 6 2<br>3 3 3 3<br>4 4 4 5<br>5 5 5 7<br>6 6 6 9</p>
+<p>5 0 2<br>1 3 4 5<br>2 5 5 8</p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a><strong>Sample Output</strong></h2><p>11</p>
+<p>2</p>
+<p>13</p>
+<h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><p>时间长度为n，每一秒SB Bob会拿一次红包，每个红包有三种属性，$s, t, d, w$分别表示这个红包出现的开始时间，结束时间，领这个红包之后d时刻之前都不能再领红包，以及这个红包里面有的钱。每个时刻Bob会贪心的选择(w, d)最大的红包。Alice有m次干扰操作，每次他可以选择一个时刻进行干扰，这个时刻被干扰的话，Bob就不能拿红包。求Bob会拿到的最少金额的红包是多少。</p>
+<h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>先预处理初每个时刻Bob的决策，再从后往前DP。预处理就是拿个扫描线从左往右扫，用一个multiset维护一下，遇到s就加入multiset，遇到t+1就从multiset中去掉。DP的话，定义$dp[i][j]$ 表示 $i \dots n$干扰j次的最小硬币数量。状态转移是很显然的，就i时刻干不干扰两种决策。除了dp[n+1][0]为0以外，全都初始化为INF。</p>
+<h2 id="代码："><a href="#代码：" class="headerlink" title="代码："></a><strong>代码：</strong></h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> db double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> what_is(x) cerr &lt;&lt;  <span class="meta-string">"Line "</span> &lt;&lt; __LINE__ &lt;&lt; <span class="meta-string">": "</span> &lt;&lt; #x &lt;&lt; <span class="meta-string">" is "</span> &lt;&lt; (x) &lt;&lt; endl;</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> suf_zero(x) __builtin_ffs(x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pre_zero(x) __builtin_clz(x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> num_one(x) __builtin_popcount(x)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> <span class="meta-keyword">error</span>(args...) &#123; string _s = #args; replace(_s.begin(), _s.end(), <span class="meta-string">','</span>, <span class="meta-string">' '</span>); stringstream _ss(_s); istream_iterator<span class="meta-string">&lt;string&gt; _it(_ss); err(_it, args); &#125;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mt make_tuple</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mp make_pair</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> eb emplace_back</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFI 2000000009</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INFLL (ll)1e18+7</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ig ignore</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> fi first</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> TP tuple<span class="meta-string">&lt;int, int, int&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> se second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson l, m, rt&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson m+1, r, rt&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PII pair<span class="meta-string">&lt;int, int&gt;</span></span></span><br><span class="line"><span class="comment">//#define rep(i, begin, end) for(__typeof(end) i =(begin)-((begin)&gt;(end));i!=(end)-((begin)&gt;(end));i+=1-2*((begin)&gt;(end)))</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">err</span><span class="params">(istream_iterator&lt;<span class="built_in">string</span>&gt; it)</span> </span>&#123;<span class="built_in">cerr</span>&lt;&lt;<span class="built_in">endl</span>;&#125;</span><br><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span>... Args&gt;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">err</span><span class="params">(istream_iterator&lt;<span class="built_in">string</span>&gt; it, T a, Args... args)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">cerr</span> &lt;&lt; *it &lt;&lt; <span class="string">" = "</span> &lt;&lt; a &lt;&lt; <span class="string">" , "</span>;</span><br><span class="line">	err(++it, args...);</span><br><span class="line">&#125;<span class="comment">// fast IO</span></span><br><span class="line"><span class="keyword">namespace</span> fastIO</span><br><span class="line">&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> BUF_SIZE 100000</span></span><br><span class="line"><span class="comment">//     fread -&gt; read</span></span><br><span class="line">    <span class="keyword">bool</span> IOerror = <span class="number">0</span>;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nc</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">char</span> buf[BUF_SIZE], *p1 = buf+BUF_SIZE,</span><br><span class="line">         *pend = buf+BUF_SIZE;</span><br><span class="line">         <span class="keyword">if</span>(p1==pend)&#123;</span><br><span class="line">             p1 = buf;</span><br><span class="line">             pend = buf+fread(buf, <span class="number">1</span>, BUF_SIZE, <span class="built_in">stdin</span>);</span><br><span class="line">             <span class="keyword">if</span>(pend==p1)&#123;</span><br><span class="line">                 IOerror = <span class="number">1</span>;</span><br><span class="line">                 <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">             &#125;</span><br><span class="line">         &#125;</span><br><span class="line">         <span class="keyword">return</span> *p1++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">blank</span><span class="params">( <span class="keyword">char</span> ch )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ch==<span class="string">' '</span>||ch==<span class="string">'\n'</span>||ch==<span class="string">'\r'</span>||ch==<span class="string">'\t'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> ch;</span><br><span class="line">        <span class="keyword">while</span>(blank(ch=nc()));</span><br><span class="line">        <span class="keyword">if</span>(IOerror)</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        <span class="keyword">for</span>(x=ch-<span class="string">'0'</span>;(ch=nc())&gt;=<span class="string">'0'</span>&amp;&amp;ch&lt;=<span class="string">'9'</span>;x=x*<span class="number">10</span>+ch-<span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">undef</span> BUF_SIZE</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> fastIO;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-8</span>;</span><br><span class="line"><span class="comment">///////// Macro ////////////////</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span>+<span class="number">7</span>;</span><br><span class="line">ll dp[maxn][<span class="number">305</span>];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> w, d, id;</span><br><span class="line">    <span class="keyword">friend</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Node&amp; a, <span class="keyword">const</span> Node&amp; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a.w!=b.w) <span class="keyword">return</span> a.w&gt;b.w;</span><br><span class="line">        <span class="keyword">return</span> a.d &gt; b.d;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;d[maxn];</span><br><span class="line"><span class="built_in">multiset</span>&lt;Node&gt; s;</span><br><span class="line"><span class="built_in">vector</span>&lt;Node&gt; vec[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="meta-keyword">ifdef</span> aoaoao</span></span><br><span class="line"><span class="comment">//    freopen("in.txt", "r", stdin);</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">// aoaoao</span></span></span><br><span class="line">    <span class="keyword">int</span> n, m, k;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> s, t, w, d;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; s &gt;&gt; t &gt;&gt; d &gt;&gt; w;</span><br><span class="line">        vec[s].eb((Node)&#123;w, d, <span class="number">1</span>&#125;);</span><br><span class="line">        vec[t+<span class="number">1</span>].eb((Node)&#123;w, d,<span class="number">-1</span>&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;vec[i].size();++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(vec[i][j].id==<span class="number">1</span>) s.insert(vec[i][j]);</span><br><span class="line">            <span class="keyword">else</span> &#123;vec[i][j].id=<span class="number">1</span>;s.erase(s.find(vec[i][j]));&#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(s.empty())</span><br><span class="line">        &#123;</span><br><span class="line">            d[i].d = i;d[i].w=d[i].id=<span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> d[i] = *s.begin();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(dp, <span class="number">0x37</span>, <span class="keyword">sizeof</span> dp);</span><br><span class="line">    dp[n+<span class="number">1</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;=<span class="number">1</span>;--i)</span><br><span class="line">    &#123;</span><br><span class="line">        dp[i][<span class="number">0</span>] = min(dp[i][<span class="number">0</span>], d[i].w + dp[d[i].d+<span class="number">1</span>][<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=m;++j)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][j] = min(dp[i][j], dp[i+<span class="number">1</span>][j<span class="number">-1</span>]);</span><br><span class="line">            dp[i][j] = min(dp[i][j], d[i].w + dp[d[i].d+<span class="number">1</span>][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ll ans = INFLL;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=m;++i) ans = min(ans, dp[<span class="number">1</span>][i]);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DP/" rel="tag"># DP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/01/CodeforcesD21106-F/" rel="next" title="CodeforcesD21106 F Lunar New Year and a Recursive Sequence">
+                <i class="fa fa-chevron-left"></i> CodeforcesD21106 F Lunar New Year and a Recursive Sequence
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/02/Camp-Day8-D-吉良吉影的奇妙计划/" rel="prev" title="Camp Day8 D 吉良吉影的奇妙计划">
+                Camp Day8 D 吉良吉影的奇妙计划 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">嗷嗷嗷</p>
+              <p class="site-description motion-element" itemprop="description">算法竞赛, 数学, 怪物猎人(?)</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意描述"><span class="nav-number">1.</span> <span class="nav-text">题意描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意："><span class="nav-number">6.</span> <span class="nav-text">题意：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路："><span class="nav-number">7.</span> <span class="nav-text">思路：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码："><span class="nav-number">8.</span> <span class="nav-text">代码：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">嗷嗷嗷</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
