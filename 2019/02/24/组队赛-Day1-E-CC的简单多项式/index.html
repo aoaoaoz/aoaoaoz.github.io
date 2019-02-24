@@ -85,18 +85,18 @@
 
 
 
-<meta name="description" content="题意链接https://scut.online/contest/41/E 题意：求那个奇怪的多项式卷积在 $x=1$ 时候的取值 思路：需要的技能点：积性函数前缀和，杜教筛实际上就是求两个多项式的系数两两之间的gcd之和，也就是求 S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)$$其中$$gcd(i^2,(n-j)^2)=gcd(i,n-j)^">
+<meta name="description" content="题意链接https://scut.online/contest/41/E 题意：求那个奇怪的多项式卷积在 $x=1$ 时候的取值 思路：需要的技能点：积性函数前缀和，杜教筛实际上就是求两个多项式的系数两两之间的gcd之和，也就是求 S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)其中 gcd(i^2,(n-j)^2)=gcd(i,n-j)^2换个">
 <meta name="keywords" content="杜教筛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="组队赛 Day1 E CC的简单多项式">
 <meta property="og:url" content="http://aoudad.cn/2019/02/24/组队赛-Day1-E-CC的简单多项式/index.html">
 <meta property="og:site_name" content="嗷嗷嗷&#39;s Blog">
-<meta property="og:description" content="题意链接https://scut.online/contest/41/E 题意：求那个奇怪的多项式卷积在 $x=1$ 时候的取值 思路：需要的技能点：积性函数前缀和，杜教筛实际上就是求两个多项式的系数两两之间的gcd之和，也就是求 S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)$$其中$$gcd(i^2,(n-j)^2)=gcd(i,n-j)^">
+<meta property="og:description" content="题意链接https://scut.online/contest/41/E 题意：求那个奇怪的多项式卷积在 $x=1$ 时候的取值 思路：需要的技能点：积性函数前缀和，杜教筛实际上就是求两个多项式的系数两两之间的gcd之和，也就是求 S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)其中 gcd(i^2,(n-j)^2)=gcd(i,n-j)^2换个">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-24T13:01:27.438Z">
+<meta property="og:updated_time" content="2019-02-24T13:03:36.860Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="组队赛 Day1 E CC的简单多项式">
-<meta name="twitter:description" content="题意链接https://scut.online/contest/41/E 题意：求那个奇怪的多项式卷积在 $x=1$ 时候的取值 思路：需要的技能点：积性函数前缀和，杜教筛实际上就是求两个多项式的系数两两之间的gcd之和，也就是求 S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)$$其中$$gcd(i^2,(n-j)^2)=gcd(i,n-j)^">
+<meta name="twitter:description" content="题意链接https://scut.online/contest/41/E 题意：求那个奇怪的多项式卷积在 $x=1$ 时候的取值 思路：需要的技能点：积性函数前缀和，杜教筛实际上就是求两个多项式的系数两两之间的gcd之和，也就是求 S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)其中 gcd(i^2,(n-j)^2)=gcd(i,n-j)^2换个">
 
 
 
@@ -351,7 +351,8 @@
         <h2 id="题意链接"><a href="#题意链接" class="headerlink" title="题意链接"></a><strong>题意链接</strong></h2><p><a href="https://scut.online/contest/41/E" target="_blank" rel="noopener">https://scut.online/contest/41/E</a></p>
 <h2 id="题意："><a href="#题意：" class="headerlink" title="题意："></a><strong>题意：</strong></h2><p>求那个奇怪的多项式卷积在 $x=1$ 时候的取值</p>
 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a><strong>思路：</strong></h2><p>需要的技能点：积性函数前缀和，杜教筛<br>实际上就是求两个多项式的系数两两之间的gcd之和，也就是求</p>
-<script type="math/tex; mode=display">S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)$$其中$$gcd(i^2,(n-j)^2)=gcd(i,n-j)^2</script><p>换个枚举顺序的话就是$gcd(i,j)^2$，所以就是求</p>
+<script type="math/tex; mode=display">S = \Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i^2,(n-j)^2)</script><p>其中</p>
+<script type="math/tex; mode=display">gcd(i^2,(n-j)^2)=gcd(i,n-j)^2</script><p>换个枚举顺序的话就是$gcd(i,j)^2$，所以就是求</p>
 <script type="math/tex; mode=display">\Sigma_{i=1}^{n}\Sigma_{j=1}^ngcd(i,j)^2</script><p>改为枚举gcd得到</p>
 <script type="math/tex; mode=display">\Sigma_{d=1}^nd^2\ \Sigma_{i=1}^{n/d}\ \Sigma_{j=1}^{n/d}[gcd(i,j)=1]</script><p>用莫比乌斯函数替换</p>
 <script type="math/tex; mode=display">\Sigma_{d=1}^nd^2\ \Sigma_{i=1}^{n/d}\ \Sigma_{j=1}^{n/d}\ \Sigma_{D|(i,j)} \mu(D)</script><p>枚举D得到</p>
